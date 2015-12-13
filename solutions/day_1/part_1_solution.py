@@ -10,8 +10,10 @@ with open(sys.argv[1], 'r') as input_file:
         # for every character in the line
         for c in line:
             if c == '(':
+                # go up 1 floor
                 floor += 1
             elif c == ')':
+                # go down 1 floor
                 floor -= 1
 
     # print the resulting floor
