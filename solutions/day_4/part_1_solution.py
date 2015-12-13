@@ -2,17 +2,20 @@ import md5
 import sys
 
 
-# checks whether the md5 starts with 5 zeroes
-def valid_md5(m):
+# checks whether the md5 starts with n zeroes
+def valid_md5(n, m):
     # get the hexdigest of the md5
     d = m.hexdigest()
 
     # check if valid
-    for i in range(5):
+    for i in range(int(n)):
         if d[i] != '0':
             return False
 
     return True
+
+# get number of leading zeroes to be found
+n = sys.argv[1]
 
 # our secret key
 secret_key = "bgvyzdsv"
@@ -35,7 +38,7 @@ while True:
     m.update(str(i))
 
     # check if valid md5
-    if valid_md5(m):
+    if valid_md5(n, m):
         print "Lowest number: " + str(i)
         sys.exit()
     else:
