@@ -50,10 +50,16 @@ def calculate(wire):
     return results[wire]
 
 
-# SOLVE - what signal is assigned to wire 'a'
+# SOLVE - PART 1 - what signal is assigned to wire 'a'
 TARGET_WIRE = 'a'
-print TARGET_WIRE + ': ' + str(calculate(TARGET_WIRE))
+part_1_answer = calculate(TARGET_WIRE)
+print "Part 1: " + TARGET_WIRE + ': ' + str(part_1_answer)
 
+# SOLVE - PART 2 - set wire 'b' to part_1_answer and resolve
+results = {}
+results['b'] = int(part_1_answer)
+part_2_answer = calculate(TARGET_WIRE)
+print "Part 2: " + TARGET_WIRE + ": " + str(part_2_answer)
 
 ## DEBUGGING
 # Print commands
